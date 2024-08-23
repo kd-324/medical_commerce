@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration[7.2]
   def change
     create_table :users do |t|
       t.string :name
-      t.integer :type
+      t.integer :user_type
       t.string :email
       t.string :phonenumber
 
