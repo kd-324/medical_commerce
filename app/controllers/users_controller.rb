@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :validate_attributes, only: [:create, :update]
+  before_action :validate_create, only: :create
+  before_action :validate_update, only: :update
   before_action :validate_id, only: [:update, :show, :destroy]
 
   def create
@@ -40,11 +41,18 @@ class UsersController < ApplicationController
 
   private
 
-  def validate_attributes
+  def validate_create
     param! :name, String, required: true
     param! :user_type, String, required: true, in: %w[admin customer]
     param! :email, String, required: true, format: /^[^@\s]+@[^@\s]+$/
     param! :phonenumber, String, required: true, format: /^\d{10}$/
+  end
+
+  def validate_update
+    param! :name, String
+    param! :user_type, String, in: %w[admin customer]
+    param! :email, String, format: /^[^@\s]+@[^@\s]+$/
+    param! :phonenumber, String, format: /^\d{10}$/
   end
 
   def validate_id
