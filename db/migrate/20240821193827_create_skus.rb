@@ -4,7 +4,7 @@ class CreateSkus < ActiveRecord::Migration[7.2]
       t.string :name
       t.string :description
       t.float :price
-      t.integer :quantity
+      t.integer :quantity, default: 0 
       t.boolean :is_otc
 
       t.timestamps

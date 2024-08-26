@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   patch 'sku/:id', to: 'skus#update'
   delete 'sku/:id', to: 'skus#destroy'
 
-  post 'inventory/:sku_id/:operation', to: 'inventory#create'
+  post 'inventory/:sku_id/:operation', to: 'inventory#operation'
 
   post 'orders/:operation', to: 'order#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

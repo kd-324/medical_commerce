@@ -49,7 +49,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_21_193845) do
     t.string "name"
     t.string "description"
     t.float "price"
-    t.integer "quantity"
+    t.integer "quantity", default: 0
     t.boolean "is_otc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

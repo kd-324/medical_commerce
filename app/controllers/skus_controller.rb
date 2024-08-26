@@ -60,6 +60,6 @@ class SkusController < ApplicationController
   end
 
   def sku_params
-    params.permit(:name, :description, :price, :quantity, :is_otc)
+    params.permit(:name, :description, :price, :is_otc)
   end
 end
