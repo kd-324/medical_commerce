@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  post 'user', to: 'users#create'
+  get 'user/:id', to: 'users#show'
+  patch 'user/:id', to: 'users#update'
+  delete 'user/:id', to: 'users#destroy'
+
+  post 'sku', to: 'skus#create'
+  get 'sku/:id', to: 'skus#show'
+  patch 'sku/:id', to: 'skus#update'
+  delete 'sku/:id', to: 'skus#destroy'
+
+  post 'inventory/:sku_id/:operation', to: 'inventory#operation'
+
+  post 'orders/:operation', to: 'order#create'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
